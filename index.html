@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suparnojit Sarkar | Portfolio</title>
+    <style>
+        :root {
+            /* Light Mode Variables */
+            --primary-color: #333;
+            --secondary-color: #555;
+            --accent-color: #000;
+            --background-color: #fff;
+            --section-bg: #f8f8f8;
+            --text-color: #222;
+            --border-color: #e0e0e0;
+        }
+
+        [data-theme="dark"] {
+            /* Dark Mode Variables */
+            --primary-color: #d8d8d8;
+            --secondary-color: #a0a0a0;
+            --accent-color: #fff;
+            --background-color: #121212;
+            --section-bg: #1e1e1e;
+            --text-color: #e0e0e0;
+            --border-color: #333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .social-links a {
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .social-links a:hover {
+            opacity: 0.7;
+        }
+
+        section {
+            background-color: var(--section-bg);
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            transition: background-color 0.3s ease;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent-color);
+            position: relative;
+            display: inline-block;
+            letter-spacing: 1px;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background-color: var(--accent-color);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        li {
+            margin-bottom: 1.2rem;
+        }
+
+        .experience-item, .achievement-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .experience-title, .achievement-title {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.25rem;
+        }
+
+        .blog-item, .project-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .blog-title, .project-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+
+        a:hover {
+            opacity: 0.7;
+            text-decoration: underline;
+        }
+
+        .photo-gallery {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .photo-platform {
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            color: var(--secondary-color);
+            font-size: 0.9rem;
+        }
+
+        /* Theme Toggle */
+        .theme-toggle {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            background-color: var(--section-bg);
+            border: 1px solid var(--border-color);
+            color: var(--text-color);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            z-index: 1000;
+        }
+
+        .theme-toggle:hover {
+            transform: translateY(-2px);
+        }
+
+        .theme-icon {
+            font-size: 1rem;
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            section {
+                padding: 1.5rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+
+            .theme-toggle {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.7rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="theme-toggle" onclick="toggleTheme()">
+        <span class="theme-icon">🌓</span>
+        <span class="theme-text">Toggle Theme</span>
+    </button>
+
+    <div class="container">
+        <header>
+            <h1>SUPARNOJIT SARKAR</h1>
+            <div class="subtitle">Pre-Final Year CS Undergrad & Hobbyist Photographer</div>
+            <div class="social-links">
+                <a href="https://x.com/suparnojit26" target="_blank">Twitter</a>
+                <a href="https://instagram.com/the_moment_capturer_._" target="_blank">Instagram</a>
+                <a href="https://linkedin.com/in/suparnojit" target="_blank">LinkedIn</a>
+                <a href="https://devfolio.co/@suparnojit" target="_blank">Devfolio</a>
+                <a href="https://peerlist.io/suparnojit" target="_blank">Peerlist</a>
+            </div>
+        </header>
+
+        <section id="about">
+            <h2>ABOUT</h2>
+            <p>Pre-final year Computer Science undergraduate with a passion for machine learning, web 3/blockchain, and photography. Experienced in research and development across various domains with a focus on creating innovative solutions.</p>
+        </section>
+
+        <section id="experience">
+            <h2>EXPERIENCE</h2>
+            <div class="experience-item">
+                <div class="experience-title">Fellow at Wormhole India</div>
+                <p>Contributing to Wormhole Ecosystem and community aligned projects and initiatives. Collaborating with other Wormhole Fellows and scoring earning opportunities within the ecosystem.</p>
+            </div>
+            <div class="experience-item">
+                <div class="experience-title">Developer Advocate at Router Protocol</div>
+                <p>Conducting hands-on workshops at various colleges to promote the protocol. Creating engaging articles and documentation to manage the Router Protocol communityBuilding and managing the Router Guild Kolkata to foster growth and adoption of the protocol.</p>
+            </div>
+            <div class="experience-item">
+                <div class="experience-title">Ex ML Research Intern at IIT Mandi</div>
+                <p>Worked on Semantic Segmentation of Unmanned Aerial Vehicle Remote Sensing Images under the guidance of
+                    Prof.Dinesh Singh. Training and inferring of UAVid dataset using 2 different models (SegFormer,UnetFormer) models for image
+                    segmentation using Pytorch-Lightning and achieved F1 score of 0.65.</p>
+            </div>
+            <div class="experience-item">
+                <div class="experience-title">Ex Web3 Research Intern at Laika AI</div>
+                <p>Conducted research on emerging trends and technologies in the Web3 ecosystem.Analyzed and reported on advancements in blockchain protocols and decentralized
+                    applications (dApps). Collaborated with the team to develop innovative concepts and solutions for Web3
+                    adoption.</p>
+            </div>
+        </section>
+
+        <section id="achievements">
+            <h2>ACHIEVEMENTS</h2>
+            <div class="achievement-item">
+                <div class="achievement-title">Secured first place out of 3000 participants at one of Eastern India’s largest hackathons, HackNITR 5.0 coordinated by
+                    DSC NIT Rourkela</div>
+            </div>
+            <div class="achievement-item">
+                <div class="achievement-title">Best Enthusiastic Hacker Award at HackNITR 5.0 organized by DSC NIT Rourkela</div>
+            </div>
+            <div class="achievement-item">
+                <div class="achievement-title">Finalist at Cypher 3331 (among the top 17 teams who qualified for the finals of Cypher 3331, an event of solving
+                    cryptographic problems, conducted by Jadavpur University, Kolkata)</div>
+            </div>
+            <div class="achievement-item">
+                <div class="achievement-title">Top 30 at Hack Heritage 2023 hackathon arranged by Heritage Institute of Technology, Kolkata</div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>PROJECTS</h2>
+            <div class="project-item">
+                <div class="project-title">DeHazExpert</div>
+                <p>Image dehazing solution using deep learning techniques.</p>
+                <a href="https://devfolio.co/projects/dehazexpert-78f4" target="_blank">View Project</a>
+            </div>
+            <div class="project-item">
+                <div class="project-title">Semantic Segmentation of UAVid</div>
+                <p>Implementation of semantic segmentation for aerial imagery using SegFormer.</p>
+                <a href="https://github.com/sprnjt/segformer-uavid" target="_blank">GitHub Repository</a>
+            </div>
+            <div class="project-item">
+                <div class="project-title">Certifyz</div>
+                <p>Blockchain-based certification verification system.</p>
+                <a href="https://github.com/sprnjt/certifyz-test" target="_blank">GitHub Repository</a>
+            </div>
+        </section>
+
+        <section id="blogs">
+            <h2>BLOGS</h2>
+            <div class="blog-item">
+                <div class="blog-title">Solana DeFi Ecosystem</div>
+                <a href="https://docs.google.com/document/d/1k-y_vdzAC-__uwAlZK5WdLqWCzW0Sryfuw_zaygDDWM/edit" target="_blank">Read Blog</a>
+            </div>
+            <div class="blog-item">
+                <div class="blog-title">KAI Travel Agent</div>
+                <a href="https://mirror.xyz/0xcaaBee11c63a2aB20e54C87201707E268788A872/Xlc8UPBrEHR4ExmC-9ZDsA_uNMJ7YwMSnbD6ln1vgaM" target="_blank">Read Blog</a>
+            </div>
+            <div class="blog-item">
+                <div class="blog-title">Wormhole Settlement/Intent Based Architecture of Web3</div>
+                <a href="https://mirror.xyz/0xcaaBee11c63a2aB20e54C87201707E268788A872/RRg3rlOcjgxBxyqcdfnonxsVRlv7as8x4ZXshcGA4ZA" target="_blank">Read Blog</a>
+            </div>
+        </section>
+
+        <section id="photography">
+            <h2>PHOTOGRAPHY</h2>
+            <div class="photo-gallery">
+                <div>
+                    <div class="photo-platform">Vogue PhotoVogue</div>
+                    <a href="https://www.vogue.com/photovogue/photographers/234063" target="_blank">View Gallery</a>
+                </div>
+                <div>
+                    <div class="photo-platform">35 Awards</div>
+                    <a href="https://35awards.com/author/suparnojit/" target="_blank">View Gallery</a>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2025 Suparnojit Sarkar. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Theme toggle functionality
+        function toggleTheme() {
+            const htmlEl = document.documentElement;
+            const currentTheme = htmlEl.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            
+            htmlEl.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        }
+
+        // Check for saved theme preference or default to light
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+    </script>
+</body>
+</html>
